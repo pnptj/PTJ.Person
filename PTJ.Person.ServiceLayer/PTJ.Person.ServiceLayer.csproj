@@ -106,26 +106,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.BusinessRules\PTJ.Base.BusinessRules.csproj">
-      <Project>{cb41530a-3fdc-4038-87c3-71457b71d25f}</Project>
-      <Name>PTJ.Base.BusinessRules</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.DataLayer\PTJ.Base.DataLayer.csproj">
-      <Project>{ee3b33a5-d122-4ed9-a29d-f57205b30dc2}</Project>
-      <Name>PTJ.Base.DataLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.MessageChannel\PTJ.Base.MessageChannel.csproj">
-      <Project>{c07f4a6b-d68e-47b5-a353-e6044a1508db}</Project>
-      <Name>PTJ.Base.MessageChannel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.Schemas\PTJ.Base.Schemas.csproj">
-      <Project>{98671d14-325e-4b7e-9148-93a1a9df7017}</Project>
-      <Name>PTJ.Base.Schemas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.ServiceLayer\PTJ.Base.ServiceLayer.csproj">
-      <Project>{18052971-33e0-4931-aa90-56b396493a83}</Project>
-      <Name>PTJ.Base.ServiceLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PTJ.Person.BusinessRules\PTJ.Person.BusinessRules.csproj">
       <Project>{b8a20a03-045d-4634-9cbd-872495ef49bb}</Project>
       <Name>PTJ.Person.BusinessRules</Name>

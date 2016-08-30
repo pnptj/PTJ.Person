@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8A20A03-045D-4634-9CBD-872495EF49BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PTJ.Person.BusinessRules</RootNamespace>
+    <AssemblyName>PTJ.Person.BusinessRules</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdressHanterare.cs" />
+    <Compile Include="AdressTypHanterare.cs" />
+    <Compile Include="AdressVariantHanterare.cs" />
+    <Compile Include="GatuAdressHanterare.cs" />
+    <Compile Include="MailHanterare.cs" />
+    <Compile Include="PersonHanterare.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelefonHanterare.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.BusinessRules\PTJ.Base.BusinessRules.csproj">
+      <Project>{cb41530a-3fdc-4038-87c3-71457b71d25f}</Project>
+      <Name>PTJ.Base.BusinessRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.DataLayer\PTJ.Base.DataLayer.csproj">
+      <Project>{ee3b33a5-d122-4ed9-a29d-f57205b30dc2}</Project>
+      <Name>PTJ.Base.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.MessageChannel\PTJ.Base.MessageChannel.csproj">
+      <Project>{c07f4a6b-d68e-47b5-a353-e6044a1508db}</Project>
+      <Name>PTJ.Base.MessageChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\PTJ\PTJ.Base.Schemas\PTJ.Base.Schemas.csproj">
+      <Project>{98671d14-325e-4b7e-9148-93a1a9df7017}</Project>
+      <Name>PTJ.Base.Schemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PTJ.Person.DataLayer\PTJ.Person.DataLayer.csproj">
+      <Project>{77fb7cc0-abe3-44e7-b031-7a8f34c8e216}</Project>
+      <Name>PTJ.Person.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PTJ.Person.MessageChannel\PTJ.Person.MessageChannel.csproj">
+      <Project>{316ec7a4-0329-49b1-9728-7fad193c1ecf}</Project>
+      <Name>PTJ.Person.MessageChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PTJ.Person.Schemas\PTJ.Person.Schemas.csproj">
+      <Project>{45437999-cb9f-4c1c-95c4-d7fd9e972e20}</Project>
+      <Name>PTJ.Person.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="All">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllResult" type="tns:TransportMessageOfArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfAdressVariantSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfAdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfAdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdressVariantSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdressVariantSchema" nillable="true" type="tns:AdressVariantSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdressVariantSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Variant" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Message">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="msgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MsgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="eventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MessageType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Nothing" />
+          <s:enumeration value="Information" />
+          <s:enumeration value="Validation" />
+          <s:enumeration value="Security" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Abbend" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="PTJSoapHeader" type="tns:PTJSoapHeader" />
+      <s:complexType name="PTJSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeView" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentDataRole" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentRowLevelSecurity" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByIdResult" type="tns:TransportMessageOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfAdressVariantSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:AdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:AdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByAdressResult" type="tns:TransportMessageOfArrayOfKeyValueOfAdressVariantSchemaAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfKeyValueOfAdressVariantSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfKeyValueOfAdressVariantSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfKeyValueOfAdressVariantSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValueOfAdressVariantSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfAdressVariantSchemaAdressSchema" nillable="true" type="tns:KeyValueOfAdressVariantSchemaAdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValueOfAdressVariantSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="tns:AdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:AdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdressSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Person_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Organisation_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressVariant_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByAdressTyp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByAdressTypResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByAdressTypResult" type="tns:TransportMessageOfArrayOfKeyValueOfAdressVariantSchemaAdressTypSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfKeyValueOfAdressVariantSchemaAdressTypSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfKeyValueOfAdressVariantSchemaAdressTypSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfKeyValueOfAdressVariantSchemaAdressTypSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValueOfAdressVariantSchemaAdressTypSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfAdressVariantSchemaAdressTypSchema" nillable="true" type="tns:KeyValueOfAdressVariantSchemaAdressTypSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValueOfAdressVariantSchemaAdressTypSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="tns:AdressVariantSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:AdressTypSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdressTypSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Typ" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByAdressVariant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByAdressVariantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByAdressVariantResult" type="tns:TransportMessageOfArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdressVariant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAdressVariantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAdressVariantResult" type="tns:TransportMessageOfArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeAdressVariant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeAdressVariantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeAdressVariantResult" type="tns:TransportMessageOfArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAdressVariant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAdressVariantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveAdressVariantResult" type="tns:TransportMessageOfArrayOfAdressVariantSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentTimeView">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentTimeViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentTimeViewResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeViewResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AllSoapIn">
+    <wsdl:part name="parameters" element="tns:All" />
+  </wsdl:message>
+  <wsdl:message name="AllSoapOut">
+    <wsdl:part name="parameters" element="tns:AllResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ById" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByIdPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByAdress" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressTypSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByAdressTyp" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressTypSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByAdressTypResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressTypPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressVariantSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByAdressVariant" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressVariantSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByAdressVariantResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressVariantPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddAdressVariantSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAdressVariant" />
+  </wsdl:message>
+  <wsdl:message name="AddAdressVariantSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAdressVariantResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAdressVariantPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAdressVariantSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeAdressVariant" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAdressVariantSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeAdressVariantResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeAdressVariantPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdressVariantSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAdressVariant" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdressVariantSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAdressVariantResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAdressVariantPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="AdressVariantServiceSoap">
+    <wsdl:operation name="GetAll">
+      <wsdl:input name="All" message="tns:AllSoapIn" />
+      <wsdl:output name="All" message="tns:AllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input name="ById" message="tns:ByIdSoapIn" />
+      <wsdl:output name="ById" message="tns:ByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <wsdl:input message="tns:GetByAdressSoapIn" />
+      <wsdl:output message="tns:GetByAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressTyp">
+      <wsdl:input message="tns:GetByAdressTypSoapIn" />
+      <wsdl:output message="tns:GetByAdressTypSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressVariant">
+      <wsdl:input message="tns:GetByAdressVariantSoapIn" />
+      <wsdl:output message="tns:GetByAdressVariantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAdressVariant">
+      <wsdl:input message="tns:AddAdressVariantSoapIn" />
+      <wsdl:output message="tns:AddAdressVariantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAdressVariant">
+      <wsdl:input message="tns:ChangeAdressVariantSoapIn" />
+      <wsdl:output message="tns:ChangeAdressVariantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdressVariant">
+      <wsdl:input message="tns:RemoveAdressVariantSoapIn" />
+      <wsdl:output message="tns:RemoveAdressVariantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <wsdl:input message="tns:GetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:GetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <wsdl:input message="tns:SetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:SetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AdressVariantServiceSoap" type="tns:AdressVariantServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/All" style="document" />
+      <wsdl:input name="All">
+        <soap:body use="literal" />
+        <soap:header message="tns:AllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="All">
+        <soap:body use="literal" />
+        <soap:header message="tns:AllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressTyp">
+      <soap:operation soapAction="http://tempuri.org/GetByAdressTyp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressTypPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressTypPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressVariant">
+      <soap:operation soapAction="http://tempuri.org/GetByAdressVariant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdressVariant">
+      <soap:operation soapAction="http://tempuri.org/AddAdressVariant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAdressVariant">
+      <soap:operation soapAction="http://tempuri.org/ChangeAdressVariant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdressVariant">
+      <soap:operation soapAction="http://tempuri.org/RemoveAdressVariant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AdressVariantServiceSoap12" type="tns:AdressVariantServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/All" style="document" />
+      <wsdl:input name="All">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="All">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap12:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap12:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressTyp">
+      <soap12:operation soapAction="http://tempuri.org/GetByAdressTyp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressTypPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressTypPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdressVariant">
+      <soap12:operation soapAction="http://tempuri.org/GetByAdressVariant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAdressVariant">
+      <soap12:operation soapAction="http://tempuri.org/AddAdressVariant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAdressVariant">
+      <soap12:operation soapAction="http://tempuri.org/ChangeAdressVariant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAdressVariant">
+      <soap12:operation soapAction="http://tempuri.org/RemoveAdressVariant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveAdressVariantPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AdressVariantService">
+    <wsdl:port name="AdressVariantServiceSoap" binding="tns:AdressVariantServiceSoap">
+      <soap:address location="http://localhost:64115/AdressVariantService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AdressVariantServiceSoap12" binding="tns:AdressVariantServiceSoap12">
+      <soap12:address location="http://localhost:64115/AdressVariantService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

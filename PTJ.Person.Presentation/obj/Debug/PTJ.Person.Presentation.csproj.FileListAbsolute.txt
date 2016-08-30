@@ -1,0 +1,9 @@
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.exe.config
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.exe
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csprojResolveAssemblyReference.cache
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.Properties.Resources.resources
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csproj.GenerateResource.Cache
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.exe
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.Form1.resources

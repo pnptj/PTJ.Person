@@ -1,0 +1,9 @@
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Person.Schemas.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Person.Schemas.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Base.MessageChannel.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Base.Schemas.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Person.MessageChannel.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Person.MessageChannel.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.csprojResolveAssemblyReference.cache

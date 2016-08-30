@@ -1,0 +1,5 @@
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.MessageChannel\bin\Debug\PTJ.Person.MessageChannel.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.MessageChannel\bin\Debug\PTJ.Person.MessageChannel.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.MessageChannel\obj\Debug\PTJ.Person.MessageChannel.dll
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.MessageChannel\obj\Debug\PTJ.Person.MessageChannel.pdb
+C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.MessageChannel\bin\Debug\PTJ.Base.MessageChannel.dll

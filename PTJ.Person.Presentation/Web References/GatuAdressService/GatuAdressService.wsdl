@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResult" type="tns:TransportMessageOfArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfGatuAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfGatuAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfGatuAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGatuAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GatuAdressSchema" nillable="true" type="tns:GatuAdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GatuAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adress_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressVariant_FKID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdressRad1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdressRad2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdressRad3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdressRad4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdressRad5" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Postnummer" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Land" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Message">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="msgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MsgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="eventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MessageType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Nothing" />
+          <s:enumeration value="Information" />
+          <s:enumeration value="Validation" />
+          <s:enumeration value="Security" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Abbend" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="PTJSoapHeader" type="tns:PTJSoapHeader" />
+      <s:complexType name="PTJSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeView" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentDataRole" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentRowLevelSecurity" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByIdResult" type="tns:TransportMessageOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfGatuAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:GatuAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:GatuAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByAdressResult" type="tns:TransportMessageOfArrayOfKeyValueOfGatuAdressSchemaAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfKeyValueOfGatuAdressSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfKeyValueOfGatuAdressSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfKeyValueOfGatuAdressSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValueOfGatuAdressSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfGatuAdressSchemaAdressSchema" nillable="true" type="tns:KeyValueOfGatuAdressSchemaAdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValueOfGatuAdressSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="tns:GatuAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:AdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdressSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Person_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Organisation_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressVariant_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByGatuAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByGatuAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByGatuAdressResult" type="tns:TransportMessageOfArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGatuAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGatuAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGatuAdressResult" type="tns:TransportMessageOfArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeGatuAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeGatuAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeGatuAdressResult" type="tns:TransportMessageOfArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGatuAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGatuAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveGatuAdressResult" type="tns:TransportMessageOfArrayOfGatuAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentTimeView">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentTimeViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentTimeViewResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeViewResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ById" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByIdPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByAdress" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByGatuAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByGatuAdress" />
+  </wsdl:message>
+  <wsdl:message name="GetByGatuAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByGatuAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByGatuAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddGatuAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGatuAdress" />
+  </wsdl:message>
+  <wsdl:message name="AddGatuAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGatuAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGatuAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangeGatuAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeGatuAdress" />
+  </wsdl:message>
+  <wsdl:message name="ChangeGatuAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeGatuAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeGatuAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGatuAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveGatuAdress" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGatuAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveGatuAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGatuAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="GatuAdressServiceSoap">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllSoapIn" />
+      <wsdl:output message="tns:GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input name="ById" message="tns:ByIdSoapIn" />
+      <wsdl:output name="ById" message="tns:ByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <wsdl:input message="tns:GetByAdressSoapIn" />
+      <wsdl:output message="tns:GetByAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByGatuAdress">
+      <wsdl:input message="tns:GetByGatuAdressSoapIn" />
+      <wsdl:output message="tns:GetByGatuAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGatuAdress">
+      <wsdl:input message="tns:AddGatuAdressSoapIn" />
+      <wsdl:output message="tns:AddGatuAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeGatuAdress">
+      <wsdl:input message="tns:ChangeGatuAdressSoapIn" />
+      <wsdl:output message="tns:ChangeGatuAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGatuAdress">
+      <wsdl:input message="tns:RemoveGatuAdressSoapIn" />
+      <wsdl:output message="tns:RemoveGatuAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <wsdl:input message="tns:GetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:GetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <wsdl:input message="tns:SetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:SetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GatuAdressServiceSoap" type="tns:GatuAdressServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByGatuAdress">
+      <soap:operation soapAction="http://tempuri.org/GetByGatuAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGatuAdress">
+      <soap:operation soapAction="http://tempuri.org/AddGatuAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeGatuAdress">
+      <soap:operation soapAction="http://tempuri.org/ChangeGatuAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGatuAdress">
+      <soap:operation soapAction="http://tempuri.org/RemoveGatuAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GatuAdressServiceSoap12" type="tns:GatuAdressServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap12:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap12:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByGatuAdress">
+      <soap12:operation soapAction="http://tempuri.org/GetByGatuAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGatuAdress">
+      <soap12:operation soapAction="http://tempuri.org/AddGatuAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeGatuAdress">
+      <soap12:operation soapAction="http://tempuri.org/ChangeGatuAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGatuAdress">
+      <soap12:operation soapAction="http://tempuri.org/RemoveGatuAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveGatuAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GatuAdressService">
+    <wsdl:port name="GatuAdressServiceSoap" binding="tns:GatuAdressServiceSoap">
+      <soap:address location="http://localhost:64115/GatuAdressService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GatuAdressServiceSoap12" binding="tns:GatuAdressServiceSoap12">
+      <soap12:address location="http://localhost:64115/GatuAdressService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

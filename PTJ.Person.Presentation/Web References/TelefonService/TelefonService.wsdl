@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResult" type="tns:TransportMessageOfArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfTelefonSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfTelefonSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfTelefonSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTelefonSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TelefonSchema" nillable="true" type="tns:TelefonSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TelefonSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adress_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressVariant_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TelefonNummer" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Message">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="msgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="EventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ordinal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MsgType" type="tns:MessageType" />
+          <s:element minOccurs="1" maxOccurs="1" name="eventTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="exceptionMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MessageType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Nothing" />
+          <s:enumeration value="Information" />
+          <s:enumeration value="Validation" />
+          <s:enumeration value="Security" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Abbend" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="PTJSoapHeader" type="tns:PTJSoapHeader" />
+      <s:complexType name="PTJSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeView" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentDataRole" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentRowLevelSecurity" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByIdResult" type="tns:TransportMessageOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfTelefonSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:TelefonSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:TelefonSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByAdress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByAdressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByAdressResult" type="tns:TransportMessageOfArrayOfKeyValueOfTelefonSchemaAdressSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransportMessageOfArrayOfKeyValueOfTelefonSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfKeyValueOfTelefonSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="lstMessages" type="tns:ArrayOfMessage" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfKeyValueOfTelefonSchemaAdressSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Messages" type="tns:ArrayOfMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValueOfTelefonSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfTelefonSchemaAdressSchema" nillable="true" type="tns:KeyValueOfTelefonSchemaAdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValueOfTelefonSchemaAdressSchema">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="tns:TelefonSchema" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="tns:AdressSchema" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdressSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressTyp_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Person_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Organisation_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdressVariant_FKID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SkapadDatum" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdateradDatum" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetByTelefonNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetByTelefonNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetByTelefonNumberResult" type="tns:TransportMessageOfArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTelefon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTelefonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddTelefonResult" type="tns:TransportMessageOfArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeTelefon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeTelefonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeTelefonResult" type="tns:TransportMessageOfArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTelefon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lstItems" type="tns:ArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveTelefonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveTelefonResult" type="tns:TransportMessageOfArrayOfTelefonSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentTimeView">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentTimeViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentTimeViewResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dt" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCurrentTimeViewResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:ById" />
+  </wsdl:message>
+  <wsdl:message name="ByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:ByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByIdPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByAdress" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByAdressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByAdressPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetByTelefonNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetByTelefonNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetByTelefonNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetByTelefonNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetByTelefonNumberPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddTelefonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTelefon" />
+  </wsdl:message>
+  <wsdl:message name="AddTelefonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTelefonResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTelefonPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangeTelefonSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeTelefon" />
+  </wsdl:message>
+  <wsdl:message name="ChangeTelefonSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeTelefonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeTelefonPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTelefonSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveTelefon" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTelefonSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveTelefonResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTelefonPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeView" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCurrentTimeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCurrentTimeViewPTJSoapHeader">
+    <wsdl:part name="PTJSoapHeader" element="tns:PTJSoapHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TelefonServiceSoap">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllSoapIn" />
+      <wsdl:output message="tns:GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input name="ById" message="tns:ByIdSoapIn" />
+      <wsdl:output name="ById" message="tns:ByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <wsdl:input message="tns:GetByAdressSoapIn" />
+      <wsdl:output message="tns:GetByAdressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByTelefonNumber">
+      <wsdl:input message="tns:GetByTelefonNumberSoapIn" />
+      <wsdl:output message="tns:GetByTelefonNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTelefon">
+      <wsdl:input message="tns:AddTelefonSoapIn" />
+      <wsdl:output message="tns:AddTelefonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTelefon">
+      <wsdl:input message="tns:ChangeTelefonSoapIn" />
+      <wsdl:output message="tns:ChangeTelefonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTelefon">
+      <wsdl:input message="tns:RemoveTelefonSoapIn" />
+      <wsdl:output message="tns:RemoveTelefonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <wsdl:input message="tns:GetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:GetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <wsdl:input message="tns:SetCurrentTimeViewSoapIn" />
+      <wsdl:output message="tns:SetCurrentTimeViewSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TelefonServiceSoap" type="tns:TelefonServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap:body use="literal" />
+        <soap:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByTelefonNumber">
+      <soap:operation soapAction="http://tempuri.org/GetByTelefonNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByTelefonNumberPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetByTelefonNumberPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTelefon">
+      <soap:operation soapAction="http://tempuri.org/AddTelefon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTelefon">
+      <soap:operation soapAction="http://tempuri.org/ChangeTelefon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangeTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTelefon">
+      <soap:operation soapAction="http://tempuri.org/RemoveTelefon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RemoveTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TelefonServiceSoap12" type="tns:TelefonServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap12:operation soapAction="http://tempuri.org/ById" style="document" />
+      <wsdl:input name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ById">
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ByIdPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByAdress">
+      <soap12:operation soapAction="http://tempuri.org/GetByAdress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByAdressPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByTelefonNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetByTelefonNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByTelefonNumberPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetByTelefonNumberPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTelefon">
+      <soap12:operation soapAction="http://tempuri.org/AddTelefon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTelefon">
+      <soap12:operation soapAction="http://tempuri.org/ChangeTelefon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ChangeTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTelefon">
+      <soap12:operation soapAction="http://tempuri.org/RemoveTelefon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RemoveTelefonPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCurrentTimeView">
+      <soap12:operation soapAction="http://tempuri.org/SetCurrentTimeView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SetCurrentTimeViewPTJSoapHeader" part="PTJSoapHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TelefonService">
+    <wsdl:port name="TelefonServiceSoap" binding="tns:TelefonServiceSoap">
+      <soap:address location="http://localhost:64115/TelefonService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TelefonServiceSoap12" binding="tns:TelefonServiceSoap12">
+      <soap12:address location="http://localhost:64115/TelefonService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

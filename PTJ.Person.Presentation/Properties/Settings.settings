@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PTJ.Person.Presentation.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PTJ_Person_Presentation_PersonService_PersonService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/PersonService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_AdressService_AdressService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/AdressService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_AdressTypService_AdressTypService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/AdressTypService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_AdressVariantService_AdressVariantService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/AdressVariantService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_GatuAdressService_GatuAdressService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/GatuAdressService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_MailService_MailService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/MailService.asmx</Value>
+    </Setting>
+    <Setting Name="PTJ_Person_Presentation_TelefonService_TelefonService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:64115/TelefonService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

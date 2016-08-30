@@ -35,6 +35,15 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PTJ.Person.Presentation.Web
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{5FFE29CA-D806-49CC-9444-F8A028429DB4}"
+	ProjectSection(SolutionItems) = preProject
+		Base\PTJ.Base.BusinessRules.dll = Base\PTJ.Base.BusinessRules.dll
+		Base\PTJ.Base.DataLayer.dll = Base\PTJ.Base.DataLayer.dll
+		Base\PTJ.Base.MessageChannel.dll = Base\PTJ.Base.MessageChannel.dll
+		Base\PTJ.Base.Schemas.dll = Base\PTJ.Base.Schemas.dll
+		Base\PTJ.Base.ServiceLayer.dll = Base\PTJ.Base.ServiceLayer.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

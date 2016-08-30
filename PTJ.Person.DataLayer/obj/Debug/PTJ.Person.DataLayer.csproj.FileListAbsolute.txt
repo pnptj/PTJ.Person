@@ -14,3 +14,16 @@ C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.Sche
 C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.DataLayer.pdb
 C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.MessageChannel.pdb
 C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\obj\Debug\PTJ.Person.DataLayer.csprojResolveAssemblyReference.cache
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\obj\Debug\PTJ.Person.DataLayer.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\obj\Debug\PTJ.Person.DataLayer.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.DataLayer.dll.config
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.DataLayer.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.DataLayer.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.DataLayer.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.MessageChannel.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.Schemas.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.MessageChannel.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.Schemas.dll
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.MessageChannel.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.Schemas.pdb

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PTJ.BusinessRules
 {
-    public class PersonHanterare : Base<int, Person.DataLayer.PersonHanterare, Person.DataLayer.Person, Person.DataLayer.Adress, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing>
+    public class PersonHanterare :  Base<int, Person.DataLayer.PersonHanterare, Person.DataLayer.Person, Person.DataLayer.Adress, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing>
     {
         public PersonHanterare()
         {

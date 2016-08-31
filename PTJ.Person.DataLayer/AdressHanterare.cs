@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PTJ.Person.DataLayer
 {
+    //Kommentar
     public class AdressHanterare : Base<int, Adress, DBPersonDataContext, int, int, int, int, int, Nothing, Nothing, Nothing>
     {
         public enum Relations

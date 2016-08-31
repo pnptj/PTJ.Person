@@ -16,3 +16,5 @@ C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Person
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.csprojResolveAssemblyReference.cache
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.dll
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\obj\Debug\PTJ.Person.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Base.MessageChannel.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Schemas\bin\Debug\PTJ.Base.Schemas.pdb

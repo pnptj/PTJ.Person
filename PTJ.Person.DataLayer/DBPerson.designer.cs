@@ -33,6 +33,9 @@ namespace PTJ.Person.DataLayer
     partial void InsertAdress(Adress instance);
     partial void UpdateAdress(Adress instance);
     partial void DeleteAdress(Adress instance);
+    partial void InsertPerson(Person instance);
+    partial void UpdatePerson(Person instance);
+    partial void DeletePerson(Person instance);
     partial void InsertAdressTyp(AdressTyp instance);
     partial void UpdateAdressTyp(AdressTyp instance);
     partial void DeleteAdressTyp(AdressTyp instance);
@@ -48,9 +51,6 @@ namespace PTJ.Person.DataLayer
     partial void InsertTelefon(Telefon instance);
     partial void UpdateTelefon(Telefon instance);
     partial void DeleteTelefon(Telefon instance);
-    partial void InsertPerson(Person instance);
-    partial void UpdatePerson(Person instance);
-    partial void DeletePerson(Person instance);
     #endregion
 		
 		public DBPersonDataContext() : 
@@ -91,6 +91,14 @@ namespace PTJ.Person.DataLayer
 			}
 		}
 		
+		public System.Data.Linq.Table<Person> Persons
+		{
+			get
+			{
+				return this.GetTable<Person>();
+			}
+		}
+		
 		public System.Data.Linq.Table<AdressTyp> AdressTyps
 		{
 			get
@@ -128,14 +136,6 @@ namespace PTJ.Person.DataLayer
 			get
 			{
 				return this.GetTable<Telefon>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Person> Persons
-		{
-			get
-			{
-				return this.GetTable<Person>();
 			}
 		}
 	}
@@ -509,6 +509,212 @@ namespace PTJ.Person.DataLayer
 		{
 			this.SendPropertyChanging();
 			entity.Adress = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Person.Person")]
+	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _FörNamn;
+		
+		private string _MellanNamn;
+		
+		private string _Efternamn;
+		
+		private string _PersonNummer;
+		
+		private System.DateTime _SkapadDatum;
+		
+		private System.Nullable<System.DateTime> _UpdateradDatum;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFörNamnChanging(string value);
+    partial void OnFörNamnChanged();
+    partial void OnMellanNamnChanging(string value);
+    partial void OnMellanNamnChanged();
+    partial void OnEfternamnChanging(string value);
+    partial void OnEfternamnChanged();
+    partial void OnPersonNummerChanging(string value);
+    partial void OnPersonNummerChanged();
+    partial void OnSkapadDatumChanging(System.DateTime value);
+    partial void OnSkapadDatumChanged();
+    partial void OnUpdateradDatumChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdateradDatumChanged();
+    #endregion
+		
+		public Person()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FörNamn", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string FörNamn
+		{
+			get
+			{
+				return this._FörNamn;
+			}
+			set
+			{
+				if ((this._FörNamn != value))
+				{
+					this.OnFörNamnChanging(value);
+					this.SendPropertyChanging();
+					this._FörNamn = value;
+					this.SendPropertyChanged("FörNamn");
+					this.OnFörNamnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MellanNamn", DbType="NVarChar(255)")]
+		public string MellanNamn
+		{
+			get
+			{
+				return this._MellanNamn;
+			}
+			set
+			{
+				if ((this._MellanNamn != value))
+				{
+					this.OnMellanNamnChanging(value);
+					this.SendPropertyChanging();
+					this._MellanNamn = value;
+					this.SendPropertyChanged("MellanNamn");
+					this.OnMellanNamnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Efternamn", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string Efternamn
+		{
+			get
+			{
+				return this._Efternamn;
+			}
+			set
+			{
+				if ((this._Efternamn != value))
+				{
+					this.OnEfternamnChanging(value);
+					this.SendPropertyChanging();
+					this._Efternamn = value;
+					this.SendPropertyChanged("Efternamn");
+					this.OnEfternamnChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonNummer", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string PersonNummer
+		{
+			get
+			{
+				return this._PersonNummer;
+			}
+			set
+			{
+				if ((this._PersonNummer != value))
+				{
+					this.OnPersonNummerChanging(value);
+					this.SendPropertyChanging();
+					this._PersonNummer = value;
+					this.SendPropertyChanged("PersonNummer");
+					this.OnPersonNummerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SkapadDatum", DbType="DateTime NOT NULL")]
+		public System.DateTime SkapadDatum
+		{
+			get
+			{
+				return this._SkapadDatum;
+			}
+			set
+			{
+				if ((this._SkapadDatum != value))
+				{
+					this.OnSkapadDatumChanging(value);
+					this.SendPropertyChanging();
+					this._SkapadDatum = value;
+					this.SendPropertyChanged("SkapadDatum");
+					this.OnSkapadDatumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateradDatum", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UpdateradDatum
+		{
+			get
+			{
+				return this._UpdateradDatum;
+			}
+			set
+			{
+				if ((this._UpdateradDatum != value))
+				{
+					this.OnUpdateradDatumChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateradDatum = value;
+					this.SendPropertyChanged("UpdateradDatum");
+					this.OnUpdateradDatumChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1813,212 +2019,6 @@ namespace PTJ.Person.DataLayer
 						this._Adress_FKID = default(int);
 					}
 					this.SendPropertyChanged("Adress");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Person.Person")]
-	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _FörNamn;
-		
-		private string _MellanNamn;
-		
-		private string _Efternamn;
-		
-		private string _PersonNummer;
-		
-		private System.DateTime _SkapadDatum;
-		
-		private System.Nullable<System.DateTime> _UpdateradDatum;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnFörNamnChanging(string value);
-    partial void OnFörNamnChanged();
-    partial void OnMellanNamnChanging(string value);
-    partial void OnMellanNamnChanged();
-    partial void OnEfternamnChanging(string value);
-    partial void OnEfternamnChanged();
-    partial void OnPersonNummerChanging(string value);
-    partial void OnPersonNummerChanged();
-    partial void OnSkapadDatumChanging(System.DateTime value);
-    partial void OnSkapadDatumChanged();
-    partial void OnUpdateradDatumChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdateradDatumChanged();
-    #endregion
-		
-		public Person()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FörNamn", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string FörNamn
-		{
-			get
-			{
-				return this._FörNamn;
-			}
-			set
-			{
-				if ((this._FörNamn != value))
-				{
-					this.OnFörNamnChanging(value);
-					this.SendPropertyChanging();
-					this._FörNamn = value;
-					this.SendPropertyChanged("FörNamn");
-					this.OnFörNamnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MellanNamn", DbType="NVarChar(255)")]
-		public string MellanNamn
-		{
-			get
-			{
-				return this._MellanNamn;
-			}
-			set
-			{
-				if ((this._MellanNamn != value))
-				{
-					this.OnMellanNamnChanging(value);
-					this.SendPropertyChanging();
-					this._MellanNamn = value;
-					this.SendPropertyChanged("MellanNamn");
-					this.OnMellanNamnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Efternamn", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string Efternamn
-		{
-			get
-			{
-				return this._Efternamn;
-			}
-			set
-			{
-				if ((this._Efternamn != value))
-				{
-					this.OnEfternamnChanging(value);
-					this.SendPropertyChanging();
-					this._Efternamn = value;
-					this.SendPropertyChanged("Efternamn");
-					this.OnEfternamnChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonNummer", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
-		public string PersonNummer
-		{
-			get
-			{
-				return this._PersonNummer;
-			}
-			set
-			{
-				if ((this._PersonNummer != value))
-				{
-					this.OnPersonNummerChanging(value);
-					this.SendPropertyChanging();
-					this._PersonNummer = value;
-					this.SendPropertyChanged("PersonNummer");
-					this.OnPersonNummerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SkapadDatum", DbType="DateTime NOT NULL")]
-		public System.DateTime SkapadDatum
-		{
-			get
-			{
-				return this._SkapadDatum;
-			}
-			set
-			{
-				if ((this._SkapadDatum != value))
-				{
-					this.OnSkapadDatumChanging(value);
-					this.SendPropertyChanging();
-					this._SkapadDatum = value;
-					this.SendPropertyChanged("SkapadDatum");
-					this.OnSkapadDatumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateradDatum", DbType="DateTime")]
-		public System.Nullable<System.DateTime> UpdateradDatum
-		{
-			get
-			{
-				return this._UpdateradDatum;
-			}
-			set
-			{
-				if ((this._UpdateradDatum != value))
-				{
-					this.OnUpdateradDatumChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateradDatum = value;
-					this.SendPropertyChanged("UpdateradDatum");
-					this.OnUpdateradDatumChanged();
 				}
 			}
 		}

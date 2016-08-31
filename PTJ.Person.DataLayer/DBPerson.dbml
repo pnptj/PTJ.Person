@@ -16,6 +16,17 @@
       <Association Name="AdressVariant_Adress" Member="AdressVariant" ThisKey="AdressVariant_FKID" OtherKey="Id" Type="AdressVariant" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="Person.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FörNamn" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="MellanNamn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Efternamn" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonNummer" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="SkapadDatum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateradDatum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="Adress.AdressTyp" Member="AdressTyps">
     <Type Name="AdressTyp">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -78,17 +89,6 @@
       <Column Name="SkapadDatum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdateradDatum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="Adress_Telefon" Member="Adress" ThisKey="Adress_FKID" OtherKey="Id" Type="Adress" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="Person.Person" Member="Persons">
-    <Type Name="Person">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="FörNamn" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="MellanNamn" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Efternamn" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="PersonNummer" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="SkapadDatum" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdateradDatum" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

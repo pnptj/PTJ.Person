@@ -27,3 +27,6 @@ C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Pers
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.Schemas.dll
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.MessageChannel.pdb
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Person.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.DataLayer.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.MessageChannel.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.DataLayer\bin\Debug\PTJ.Base.Schemas.pdb

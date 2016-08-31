@@ -39,3 +39,8 @@ C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Person.
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Person.DataLayer.pdb
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Person.MessageChannel.pdb
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Person.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Base.BusinessRules.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Base.DataLayer.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Base.MessageChannel.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Base.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.ServiceLayer\bin\PTJ.Base.ServiceLayer.pdb

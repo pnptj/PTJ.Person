@@ -32,3 +32,7 @@ C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Person.DataLayer.pdb
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Person.MessageChannel.pdb
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Person.Schemas.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Base.BusinessRules.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Base.DataLayer.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Base.MessageChannel.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.BusinessRules\bin\Debug\PTJ.Base.Schemas.pdb

@@ -30,22 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PTJ.Base.BusinessRules, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Projects\PTJ Person\PTJ.Person\Base\PTJ.Base.BusinessRules.dll</HintPath>
-    </Reference>
-    <Reference Include="PTJ.Base.DataLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Projects\PTJ Person\PTJ.Person\Base\PTJ.Base.DataLayer.dll</HintPath>
-    </Reference>
-    <Reference Include="PTJ.Base.MessageChannel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Projects\PTJ Person\PTJ.Person\Base\PTJ.Base.MessageChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="PTJ.Base.Schemas, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Projects\PTJ Person\PTJ.Person\Base\PTJ.Base.Schemas.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -66,6 +50,22 @@
     <Compile Include="TelefonHanterare.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\PTJ.Base\PTJ.Base.BusinessRules\PTJ.Base.BusinessRules.csproj">
+      <Project>{cb41530a-3fdc-4038-87c3-71457b71d25f}</Project>
+      <Name>PTJ.Base.BusinessRules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PTJ.Base\PTJ.Base.DataLayer\PTJ.Base.DataLayer.csproj">
+      <Project>{ee3b33a5-d122-4ed9-a29d-f57205b30dc2}</Project>
+      <Name>PTJ.Base.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PTJ.Base\PTJ.Base.MessageChannel\PTJ.Base.MessageChannel.csproj">
+      <Project>{c07f4a6b-d68e-47b5-a353-e6044a1508db}</Project>
+      <Name>PTJ.Base.MessageChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PTJ.Base\PTJ.Base.Schemas\PTJ.Base.Schemas.csproj">
+      <Project>{98671d14-325e-4b7e-9148-93a1a9df7017}</Project>
+      <Name>PTJ.Base.Schemas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PTJ.Person.DataLayer\PTJ.Person.DataLayer.csproj">
       <Project>{77fb7cc0-abe3-44e7-b031-7a8f34c8e216}</Project>
       <Name>PTJ.Person.DataLayer</Name>

@@ -15,3 +15,4 @@ C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.P
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csproj.GenerateResource.Cache
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.exe
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.pdb
+C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csprojResolveAssemblyReference.cache

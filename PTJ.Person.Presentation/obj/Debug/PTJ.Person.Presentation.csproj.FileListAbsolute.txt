@@ -10,7 +10,6 @@ C:\Projects\PTJ Person\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.P
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.exe.config
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.exe
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\bin\Debug\PTJ.Person.Presentation.pdb
-C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csprojResolveAssemblyReference.cache
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.Form1.resources
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.Properties.Resources.resources
 C:\Users\pnr\Documents\GitHub\PTJ.Person\PTJ.Person.Presentation\obj\Debug\PTJ.Person.Presentation.csproj.GenerateResource.Cache
